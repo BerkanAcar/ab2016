@@ -7,7 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<% if user_signed_in? %>
+	Hoşgeldiniz <%= current_user.try(:email) %><br/>
+	<%= link_to 'Çıkış', destroy_user_session_path, :method => :delete %>
+<% else %>
+	<%= link_to 'Giriş', new_user_session_path %>
+<% end %>
 <%= yield %>
 
 </body>

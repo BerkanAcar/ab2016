@@ -11,6 +11,7 @@
     <tr>
       <td><%= article.title %></td>
       <td><%= article.text %></td>
+      <td><%= article.order %></td>
       <td><%= link_to 'show', article_path(article) %>
       <%= link_to 'edit', edit_article_path(article) %>
       <td><%= link_to 'Destroy', article_path(article),
